@@ -28,6 +28,6 @@ export default async function handler(req, res) {
     }
   
     // If the request method is not POST
-    return res.status(500).json({ error: 'Method Not Allowed' });
+    return res.status(500).json({ error: 'Only POST method allowed' });
   }
   
