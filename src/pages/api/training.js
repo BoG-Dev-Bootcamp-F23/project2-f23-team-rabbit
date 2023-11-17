@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
 import createTrainingLog from "../../../server/mongodb/actions/createTrainingLog";
+import updateTrainingLog from "../../../server/mongodb/actions/updateTrainingLog";
+import User from "../../../server/mongodb/models/User";
+import Animal from "../../../server/mongodb/models/Animal";
+import TrainingLog from "../../../server/mongodb/models/TrainingLog";
 import updateAnimalHoursTrained from "../../../server/mongodb/actions/updateHoursTrained";
 //other CRUD actions from server
 
@@ -25,7 +29,19 @@ export default async function handler(req, res) {
             return res.status(500).send("Failed to create training log!")
         }
     } else if (req.method === "PATCH") {
-
+        try {
+            const { trainingId, userId, animalId } = req.body;
+            const trainingExists = await TrainingLog.findById(trainingId);
+            const userExists = await User.findById(userId);
+            const animalExists = await Animal.findById(animalId);
+            if (!(trainingExists && userExists && animalExists)) {
+                return res.status(400).send("Incorrect information");
+            }
+            await updateTrainingLog(req.body);
+            return res.status(200).send("Successfully updated training log!");
+        } catch (e) {
+            return res.status(500).send("Failed to update training log!");
+        }
     } else if (req.method === "GET") {
 
     }
