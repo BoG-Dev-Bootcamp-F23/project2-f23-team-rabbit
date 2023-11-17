@@ -28,7 +28,10 @@ export default async function handler(req, res) {
 
   if (req.method === 'PATCH') {
     try {
-      const { animalId, updatedInfo } = req.body;
+      if (!req.body) {
+        return res.status(400).json({ message: 'Insufficient information' });
+      }
+        const { animalId, updatedInfo } = req.body;
       const { success, error } = await updateAnimal(animalId, updatedInfo);
 
       if (success) {
@@ -47,6 +50,7 @@ export default async function handler(req, res) {
   } else {
     res.status(405).end();
   }
+
 }
 
 
