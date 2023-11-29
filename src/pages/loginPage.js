@@ -44,7 +44,7 @@ const LoginPage = () => {
       marginTop: '50px'
   }
   const h1Style = {
-      fontSize: "64px",
+      fontSize: "40px",
       fontFamily: 'Heebo'
   }
 
