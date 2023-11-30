@@ -35,7 +35,7 @@ const CreateAccountPage = () => {
       console.log(response.status)
       if (response.status === 200) {
         // User creation successful, route to the Training Logs Dashboard
-        router.push('/Dashboard');
+        router.push('/dashboard');
       } else {
         // User creation unsuccessful, display error message
         const data = await response.json();

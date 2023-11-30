@@ -30,7 +30,7 @@ export default function LoginPage() {
         setUserID(data.userID);  // Update this line
         setAdmin(data.admin);
         setFullName(data.fullName);
-        router.push('/Dashboard');
+        router.push('/dashboard');
       } else {
         // If login is unsuccessful, set an error message
         setError('Invalid email or password');
