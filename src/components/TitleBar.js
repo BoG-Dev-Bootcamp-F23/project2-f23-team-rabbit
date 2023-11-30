@@ -1,16 +1,26 @@
 import React from "react";
+import { Oswald } from "next/font/google";
+import styles from "@/styles/TitleBar.module.css";
 
-export default function TitleBar() {
+
+const oswald = Oswald({ weight: '500', subsets: ["latin"] });
+
+export default function TitleBar(props) {
+    
+    let { loggedIn } = props; //change maybe for useContext hook
+    
+    loggedIn = true; //testing search bar for log in page vs logged in
+
     return (
-        <div className="title-bar-container">
-            <div className="title-bar-left">
-                <img src="/images/appLogo.png" alt="app logo" className="app-logo"/>
-                <h1>Progress</h1>
+        <div className={styles.titleBarContainer}>
+            <div className={styles.titleBarLeft}>
+                <img src="/images/appLogo.png" alt="app logo" className={styles.appLogo}/>
+                <h1 className={oswald.className}>Progress</h1>
             </div>
-            <div className="title-bar-right">
-                <div className="title-bar-right-search-container">
-                    <img src="/images/searchLogo.png" alt="search logo" className="title-bar-right-search-logo"/>
-                    <input type="text" placeholder="Search" className="title-bar-right-search-input"/>
+            <div className={styles.titleBarRight}>
+                <div className={styles.titleBarSearch}>
+                    {loggedIn && <img src="/images/searchLogo.png" alt="search logo" className={styles.titleBarSearchLogo}/>}
+                    {loggedIn && (<input type="text" placeholder="Search" className={styles.titleBarSearchBar}></input>)}
                 </div>
             </div>
         </div>

@@ -1,0 +1,74 @@
+.trainingCardContainer {
+    display: flex;
+    width: 1165px;
+    height: 162px;
+    border: 1px solid #E5E5E5;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    margin-left: 120px;
+    box-shadow: 0px 4px 4px #00000021;
+  }
+
+  .trainingCardContainer > div {
+    width: 100%;
+    height: 100%;
+  }
+  .trainingCardLeft {
+    display: flex;
+  }
+
+  .trainingCardDate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #070A52D9;
+    color: white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 150px;
+  }
+
+  .day {
+    font-size: 48px;
+  }
+
+  .monthYear {
+    font-size: 25px;
+  }
+
+  .trainingCardInfo {
+    margin-top: 7px;
+    width: 700px;
+    overflow: scroll;
+    margin-left: 20px;
+  }
+
+.title {
+  font-size: 30px;
+  color: #260101;
+}
+
+  .subInfo {
+    color: #999999;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    overflow: scroll;
+    font-size: 20px;
+  }
+
+  .trainingCardRight {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .editButton {
+    width: 80px;
+    height: 80px;
+    margin-right: 30.5px;
+  }

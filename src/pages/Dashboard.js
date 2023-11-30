@@ -5,7 +5,7 @@ import Animals from "@/components/Animals";
 import Sidebar from "@/components/Sidebar";
 import TitleBar from "@/components/TitleBar";
 import TrainingLogs from "@/components/TrainingLogs";
-import { Allan } from "next/font/google";
+import styles from "@/styles/Dashboard.module.css";
 import { useState } from "react";
 
 import styles from "@/styles/Dashboard.module.css";
