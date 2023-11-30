@@ -38,7 +38,7 @@ export default function TrainingLogs(props) {
                 />
             ) : (
                 <>
-                    <div className={styles.header}>
+                    <div className={styles.header} style={{fontFamily: "Heebo, sans-serif"}}>
                         <h1>Training Logs</h1>
                         <div className={styles.createLogButton} onClick={() => setShowForm(true)}>
                             <Image src="/images/add.png" width={20} height={20} className={styles.add}/>

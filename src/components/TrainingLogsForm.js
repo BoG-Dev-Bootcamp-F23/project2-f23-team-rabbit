@@ -5,7 +5,7 @@ export default function TrainingLogsForm({ userID, onCancel, onSubmitSuccess }) 
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
   const [year, setYear] = useState("");
-    let buildDate = "";
+  let buildDate = "";
   const [newTrainingLog, setNewTrainingLog] = useState({
     title: "",
     date: "",

@@ -5,7 +5,7 @@ export default function TitleBar(props) {
   let { loggedIn } = props; //change maybe for useContext hook
 
   return (
-    <div className={styles.titleBarContainer}>
+    <div className={styles.titleBarContainer} style={{fontFamily: "Oswald, sans-serif"}}>
       <div className={styles.titleBarLeft}>
         <img
           src="/images/appLogo.png"

@@ -82,11 +82,11 @@ export default function TrainingLogCard(props) {
     return (
         <div className={styles.trainingCardContainer}>
             <div className={styles.trainingCardLeft}>
-                <div className={styles.trainingCardDate}>
+                <div className={styles.trainingCardDate} style={{fontFamily: "Oswald, sans-serif"}}>
                 <p className={`${styles.day}`}>{day}</p>
                 <p className={`${styles.monthYear} `}>{month} - {year}</p>
                 </div>
-                <div className={styles.trainingCardInfo}>
+                <div className={styles.trainingCardInfo} style={{fontFamily: "Heebo, sans-serif"}}>
                     <h2><span className={styles.title}>{title}</span> <span className={`${styles.subInfo}`}>&#x2022; {hours} hours</span></h2>
                     <p className={`${styles.subInfo}`} style={{fontSize : "18px"}}>{userById.fullName} - {animalById.breed} - {animalById.name}</p>
                     <p className={`${styles.description}`}>{description}</p>
