@@ -13,6 +13,7 @@ export default async function handler(req, res) {
                 message: "Success!",
                 userID: verified._id,
                 admin: verified.admin,
+                fullName: verified.fullName,
               });
               
         } catch (e) {

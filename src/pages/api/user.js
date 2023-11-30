@@ -14,7 +14,7 @@ export default async function handler(req, res) {
             const newAdmin = Boolean(admin);
 
             await createUser({ fullName, email, password, admin : newAdmin });
-            return res.status(200).send("Success");
+            return res.status(200).json({ message: "Success" });
         } catch (e) {
             console.log(e);
             return res.status(500).send("Error! Could not create user!")

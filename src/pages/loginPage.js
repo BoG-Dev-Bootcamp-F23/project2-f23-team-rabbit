@@ -24,7 +24,7 @@ export default function LoginPage() {
       
       const data = await response.json();
 
-      console.dir(data);
+      console.log(data.fullName);
 
       if (response.status === 200) {
         setUserID(data.userID);  // Update this line

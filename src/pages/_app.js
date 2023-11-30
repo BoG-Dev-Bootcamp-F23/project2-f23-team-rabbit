@@ -8,8 +8,8 @@ export default function App({ Component, props }) {
   const [admin, setAdmin] = useState(false);
 
   return (
-    <AuthContext.Provider value={{ userID, setUserID, fullName, setFullName, admin, setAdmin, }}>
-      <Component {...props} />
-    </AuthContext.Provider>
-  );
+		<AuthContext.Provider value={{ userID, setUserID, admin, setAdmin, fullName, setFullName }}>
+			<Component {...props} />
+		</AuthContext.Provider>
+	);
 }

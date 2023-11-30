@@ -9,8 +9,10 @@ import styles from "@/styles/Dashboard.module.css";
 import { useState } from "react";
 
 export default function Dashboard() {
+    
     const [ currTab, setCurrTab ] = useState("training");
-
+    
+    
     function displayTab() {
         if (currTab === "training") {
             return <TrainingLogs />

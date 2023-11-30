@@ -1,11 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from '@/styles/Sidebar.module.css';
+import { useAuth } from '@/contexts/useAuth';
 
 export default function Sidebar(props) {
     const {currTab, setCurrTab} = props
-    const admin = true;
-    const username = "John";
+    const { fullName, admin} = useAuth();
+    console.log(admin);
 
     return (
         <div className = {styles.sidebar}>
@@ -65,14 +66,14 @@ export default function Sidebar(props) {
                 <div className={styles.userInfoContainer}>
                     <div className={styles.userInfoLeft}>
                         <div className={styles.userLogo}>
-                            <b className={styles.firstLetter}>{username?.charAt(0).toUpperCase()}</b>
+                            <b className={styles.firstLetter}>{fullName?.charAt(0).toUpperCase()}</b>
                         </div>
                     </div>
                     <div className={styles.userInfoRight}>
-                        <p className={styles.userName}>
-                            <b>{username}</b>
-                        </p>
-                        {admin ? <p className={styles.userIdentifier}>Admin</p> : <p>User</p>}
+                        <div className={styles.userName}>
+                            <div>{fullName}</div>
+                        </div>
+                        {admin ? <div className={styles.userIdentifier}>Admin</div> : <div>User</div>}
                     </div>
                 </div>
             </div>

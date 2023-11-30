@@ -23,7 +23,7 @@ export default function AnimalCard ({animal}) {
                 />
                 <div className={styles.text}>
                     <div className={styles.dog}>{animal.name} - {animal.breed}</div>
-                    <p>{animal.owner} • Trained: {animal.hoursTrained} hours</p>
+                    <div>{animal.owner} • Trained: {animal.hoursTrained} hours</div>
                 </div>
             </div>
         </div>
