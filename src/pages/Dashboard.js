@@ -30,7 +30,7 @@ export default function Dashboard() {
             <TitleBar />
             <div className= {styles.mainBody}>
                 <Sidebar currTab={currTab} setCurrTab={setCurrTab}/>
-                {displayTab()}
+                <div className={styles.tabContent}>{displayTab()}</div>
             </div>
         </div>
     )

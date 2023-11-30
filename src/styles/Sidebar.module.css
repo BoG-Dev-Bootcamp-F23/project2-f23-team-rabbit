@@ -1,6 +1,8 @@
 /* Sidebar.module.css */
 
 .sidebar {
+    margin-top: 75px;
+    position: fixed;
     width: 20vw;
     height: 95vh;
     color: #777;
