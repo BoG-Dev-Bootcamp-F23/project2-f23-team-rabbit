@@ -3,15 +3,17 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from '@/styles/CreateAccount.module.css';
+import { useAuth } from '@/contexts/useAuth';
 
 const CreateAccountPage = () => {
   const router = useRouter();
-  const [fullName, setFullName] = useState('');
+//   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [isAdmin, setIsAdmin] = useState(false);
+//   const [isAdmin, setIsAdmin] = useState(false);
   const [error, setError] = useState('');
+  const { admin, setAdmin, fullName, setFullName } = useAuth();
 
   const handleSignUp = async () => {
     // Check if password and confirm password match
@@ -27,7 +29,7 @@ const CreateAccountPage = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ fullName, email, password, admin: isAdmin.toString() }),
+        body: JSON.stringify({ fullName, email, password, admin: admin.toString() }),
       });
 
       console.log(response.status)
@@ -92,8 +94,8 @@ const CreateAccountPage = () => {
           <label>
             <input
               type="checkbox"
-              checked={isAdmin}
-              onChange={() => setIsAdmin(!isAdmin)}
+              checked={admin}
+              onChange={() => setAdmin(!admin)}
             />
             Admin access
           </label>

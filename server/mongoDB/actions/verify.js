@@ -12,7 +12,8 @@ export default async function verifyUser(data) {
         }
         const object = {
             "_id" : String(user._id),
-            "admin" : String(user.admin)
+            "admin" : String(user.admin),
+            "fullName" : String(user.fullName)
         }
 
         return object;
