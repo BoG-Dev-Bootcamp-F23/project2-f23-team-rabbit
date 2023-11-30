@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from '@/styles/Login.module.css';
 import { useAuth } from '@/contexts/useAuth';
+import TitleBar from '@/components/TitleBar';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -43,6 +44,8 @@ export default function LoginPage() {
   };
 
   return (
+    <>
+    <TitleBar loggedIn={false} />
     <div className={styles.container}>
       <div>
         <h1 className={styles.h1}>Login</h1>
@@ -80,6 +83,7 @@ export default function LoginPage() {
         Don't have an account? <a className={styles.signUp} href="/create-account">Sign Up</a>
       </p>
     </div>
+    </>
   );
 };
 

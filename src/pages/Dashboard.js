@@ -29,7 +29,7 @@ export default function dashboard() {
 
     return (
         <div>
-            <TitleBar />
+            <TitleBar loggedIn={true} />
             <div className= {styles.mainBody}>
                 <Sidebar currTab={currTab} setCurrTab={setCurrTab}/>
                 <div className={styles.tabContent}>{displayTab()}</div>
