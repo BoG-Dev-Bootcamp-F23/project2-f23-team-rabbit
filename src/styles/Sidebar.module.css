@@ -1,3 +1,12 @@
 .sidebarContainer {
-    background-color: blue;
+    border-right: 2px solid black;
+    padding: 20px;
+}
+
+.activeTab {
+    background-color: red;
+}
+
+.inactiveTab {
+    background-color: aqua;
 }

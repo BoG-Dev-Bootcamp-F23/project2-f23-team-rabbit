@@ -11,6 +11,6 @@ export default function Sidebar(props) {
     const { currTab, setCurrTab } = props;
 
     return (
-        <div>Sidebar</div>
+        <div className={styles.sidebarContainer}>Sidebar</div>
     )
 }
