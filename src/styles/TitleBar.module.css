@@ -1,0 +1,56 @@
+.titleBarContainer {
+    display: flex;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    box-shadow: 0px 4px 4px #00000040;
+  }
+  
+  .titleBarLeft {
+    display: flex;
+    margin-left: 49px;
+    width: 251px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .titleBarLeft > h1 {
+    font-size: 2.9em;
+  }
+  
+  .appLogo {
+    width: 83px;
+    height: 50px;
+  }
+
+  .titleBarRight {
+    display: flex;
+    align-items: center;
+    margin-left: 207px;
+    border: 1.5px solid #00000094;
+    border-radius: 10px;
+    width: 713px;
+    height: 60px;
+
+  }
+
+.titleBarSearch {
+    display: flex;
+    justify-content: space-between;
+}
+
+.titleBarSearchLogo {
+    width: 29.75px;
+    height: 30px;
+    background-color: transparent;
+    margin-right: 8px;
+    margin-left: 22px;
+}
+
+  .titleBarSearchBar {
+    border-color: transparent;
+    color: #00000094;
+    font-size: 25px;
+    width: 645px
+  }
+  
+  
