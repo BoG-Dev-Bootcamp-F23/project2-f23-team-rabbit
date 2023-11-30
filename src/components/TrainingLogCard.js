@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "@/styles/TrainingLogCard.module.css";
 
 export default function TrainingLogCard(props) {
-    const { date, title, description, hours, user, animal } = props;
+    const { date, title, description, hours, user, animal, all } = props;
 
     const [userById, setUser] = useState({});
     const [animalById, setAnimal] = useState({});
@@ -93,7 +93,7 @@ export default function TrainingLogCard(props) {
                 </div>
             </div>
             <div className={styles.trainingCardRight}>
-                <img src="/images/trainingLogCardEditButton.png" alt="edit logo" className={styles.editButton}/>
+                {!all && <img src="/images/trainingLogCardEditButton.png" alt="edit logo" className={styles.editButton}/>}
             </div>
         </div>
     );
