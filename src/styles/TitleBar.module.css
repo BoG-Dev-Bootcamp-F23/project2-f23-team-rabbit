@@ -36,6 +36,7 @@
 .titleBarSearch {
     display: flex;
     justify-content: space-between;
+    width: 99%;
 }
 
 .titleBarSearchLogo {
@@ -50,6 +51,7 @@
     border-color: transparent;
     color: #00000094;
     font-size: 18px;
+    width: 100%;
   }
   
   
