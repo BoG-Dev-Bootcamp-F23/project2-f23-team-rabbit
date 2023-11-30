@@ -1,3 +1,7 @@
-.dashboardContainer {
+/* Dashboard.module.css */
+
+.mainBody {
     display: flex;
-}
+    flex-direction: row;
+
+  }

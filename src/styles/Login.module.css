@@ -1,0 +1,73 @@
+/* Login.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #343a40; /* Dark text color */
+    font-family: 'Heebo', sans-serif;
+  }
+  
+  .h1 {
+    font-size: 2rem; /* Larger font size */
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; /* Set a fixed width for the form */
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+    width: 100%; /* Make the form group take full width */
+  }
+  
+  .inputField {
+    width: 100%; /* Make the input take full width */
+    padding: 10px;
+    font-size: 16px;
+    border-bottom-color: #D21312;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    width: 100%;
+    background-color: #D21312;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .button:hover {
+    background-color: #500e0e; /* Darker blue on hover */
+  }
+  
+  .error {
+    color: #dc3545; /* Red error text color */
+    margin-top: 10px; /* Adjusted margin for better spacing */
+  }
+  
+  .signUp {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  .signUp:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
