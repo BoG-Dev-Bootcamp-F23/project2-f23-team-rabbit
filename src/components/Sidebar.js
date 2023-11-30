@@ -69,10 +69,10 @@ export default function Sidebar(props) {
                         </div>
                     </div>
                     <div className={styles.userInfoRight}>
-                        <p className={styles.userName}>
+                        <div className={styles.userName}>
                             <b>{username}</b>
-                        </p>
-                        {admin ? <p className={styles.userIdentifier}>Admin</p> : <p>User</p>}
+                        </div>
+                        {admin ? <div className={styles.userIdentifier}>Admin</div> : <div>User</div>}
                     </div>
                 </div>
             </div>
