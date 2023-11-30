@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from '@/styles/CreateAccount.module.css';
 import { useAuth } from '@/contexts/useAuth';
+import TitleBar from '@/components/TitleBar';
 
 const CreateAccountPage = () => {
   const router = useRouter();
@@ -48,6 +49,8 @@ const CreateAccountPage = () => {
   };
 
   return (
+    <>
+    <TitleBar loggedIn={false}/>
     <div className={styles.container}>
       <div>
         <h1 className={styles.h1}>Create Account</h1>
@@ -113,6 +116,7 @@ const CreateAccountPage = () => {
         <a className={styles.logIn} href="/loginPage">Sign In</a>
       </p>
     </div>
+    </>
   );
 };
 
