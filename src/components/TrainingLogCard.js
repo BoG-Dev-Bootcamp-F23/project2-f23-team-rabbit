@@ -1,12 +1,26 @@
+import React from "react";
+import styles from "@/styles/TrainingLogCard.module.css";
+import { Heebo, Oswald } from "next/font/google";
+
+
+const oswald = Oswald({ weight: '500', subsets: ["latin"] });
+const lighterOswald = Oswald({ weight: '400', subsets: ["latin"] });
+
+const lightHeebo = Heebo({ weight: '400', subsets: ["latin"] })
+const midHeebo = Heebo({ weight: '500', subsets: ["latin"] })
+const darkHeebo = Heebo({ weight: '700', subsets: ["latin"] })
+
 export default function TrainingLogCard(props) {
-    // const { date, title, description, hours, owner, breed, dogName } = props;
-    const date = "2021/09/01";
-    const title = "Test";
-    const description = "Test";
-    const hours = 1;
-    const owner = "Test";
-    const breed = "Test"; 
-    const dogName = "Test";
+    // const { date, title, description, hours, owner, breed, dogName } = props; proper way to do it
+
+    //testing
+    const date = "2023/10/20";
+    const title = "Complete sit lessons";
+    const description = "Lucy finishes the sit lessons very well today. Should give her a treat Lucy finishes the sit lessons very well today. Should give her a treat Lucy finishes the sit lessons very well today. Should give her a treat";
+    const hours = 20;
+    const owner = "Long Lam";
+    const breed = "Golden Retriever"; 
+    const dogName = "Lucy";
 
     //date = "YYYY/MM/DD"
     let month = date.substring(5, 7);
@@ -53,20 +67,20 @@ export default function TrainingLogCard(props) {
     }
 
     return (
-        <div className="training-card-container">
-            <div>
-            <div className="training-card-date">
-                <p>{day}</p>
-                <p>{month} - {year}</p>
+        <div className={styles.trainingCardContainer}>
+            <div className={styles.trainingCardLeft}>
+                <div className={styles.trainingCardDate}>
+                <p className={`${styles.day} ${oswald.className}`}>{day}</p>
+                <p className={`${styles.monthYear} ${lighterOswald.className}`}>{month} - {year}</p>
+                </div>
+                <div className={styles.trainingCardInfo}>
+                    <h2 className={darkHeebo.className}><span className={styles.title}>{title}</span> <span className={`${styles.subInfo} ${midHeebo.className}`}>&#x2022; {hours} hours</span></h2>
+                    <p className={`${styles.subInfo} ${midHeebo.className}`} style={{fontSize : "18px"}}>{owner} - {breed} - {dogName}</p>
+                    <p className={`${styles.description} ${lightHeebo.className}`}>{description}</p>
+                </div>
             </div>
-            <div className="training-card-info">
-                <h2>{title} <span>* {hours} hours</span></h2>
-                <p>{owner} - {breed} - {dogName}</p>
-                <p>{description}</p>
-            </div>
-            </div>
-            <div className="training-card-edit-button">
-                <img src="/images/trainingLogCardEditButton.png" alt="edit logo"/>
+            <div className={styles.trainingCardRight}>
+                <img src="/images/trainingLogCardEditButton.png" alt="edit logo" className={styles.editButton}/>
             </div>
         </div>
     );
