@@ -3,12 +3,13 @@ import AllTrainingLogs from "@/components/AllTrainingLogs";
 import AllUsers from "@/components/AllUsers";
 import Animals from "@/components/Animals";
 import Sidebar from "@/components/Sidebar";
+import TitleBar from "@/components/TitleBar";
 import TrainingLogs from "@/components/TrainingLogs";
 import { Allan } from "next/font/google";
 import { useState } from "react";
 
 export default function Dashboard() {
-    const [ currTab, setCurrTab ] = useState("training");
+    const [ currTab, setCurrTab ] = useState("animals");
 
     function displayTab() {
         if (currTab === "training") {
@@ -26,8 +27,11 @@ export default function Dashboard() {
 
     return (
         <div>
-            <Sidebar currTab={currTab} setCurrTab={setCurrTab}/>
-            {displayTab()}
+            <TitleBar />
+            <div className="mainBody">
+                <Sidebar currTab={currTab} setCurrTab={setCurrTab}/>
+                {displayTab()}
+            </div>
         </div>
     )
 }
