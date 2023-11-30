@@ -8,7 +8,7 @@ import TrainingLogs from "@/components/TrainingLogs";
 import styles from "@/styles/Dashboard.module.css";
 import { useState } from "react";
 
-export default function Dashboard() {
+export default function dashboard() {
     
     const [ currTab, setCurrTab ] = useState("training");
     
@@ -29,7 +29,7 @@ export default function Dashboard() {
 
     return (
         <div>
-            <TitleBar />
+            <TitleBar loggedIn={true} />
             <div className= {styles.mainBody}>
                 <Sidebar currTab={currTab} setCurrTab={setCurrTab}/>
                 <div className={styles.tabContent}>{displayTab()}</div>

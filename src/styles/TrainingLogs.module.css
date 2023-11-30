@@ -1,9 +1,3 @@
-/* Animals.module.css */
-
-.display {
-  display: flex;
-}
-
 .header {
   padding-left: 20px;
   padding-top: 20px;
@@ -15,6 +9,10 @@
   margin-bottom: 10px; /* Center the header within the available width */
 }
 
+.cardContainer {
+  border-top: 1px solid #b5b1b1;
+}
+ 
 .header h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -23,26 +21,16 @@
   margin: 0; /* Remove default margin */
 }
 
-.createAnimalButton {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.5vw;
-  color: grey;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+.createLogButton {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    color: grey;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .add {
-  margin-right: 10px;
-}
-
-.cardDisplays {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; 
-  justify-content: left;
-  margin-top: auto;
-  padding: 20px;
-  border-top: 1px solid #b5b1b1;
+    margin-right: 10px;
 }
