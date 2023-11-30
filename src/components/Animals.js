@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import AnimalCard from './AnimalCard';
 import AnimalForm from './AnimalForm';
 import styles from "@/styles/Animals.module.css";
+import { useAuth } from "@/contexts/useAuth";
 import Image from "next/image";
 
 export default function Animals() {
     const [animals, setAnimals] = useState([]);
     const [showForm, setShowForm] = useState(false);
-    const userID  = 'Sneha Pal';
+    const { fullName, admin, setAdmin} = useAuth();
 
     useEffect(() => {
         getAnimalData();
@@ -33,7 +34,7 @@ export default function Animals() {
         <div className={styles.display}>
             {showForm ? (
                 <div>
-                    <AnimalForm className={styles.border} owner={userID} onCancel={() => setShowForm(false)} onSubmitSuccess={handleFormSubmitSuccess} />
+                    <AnimalForm className={styles.border} owner={fullName} onCancel={() => setShowForm(false)} onSubmitSuccess={handleFormSubmitSuccess} />
                 </div>
             ) : (
                 <div>
@@ -45,9 +46,11 @@ export default function Animals() {
                         </div>
                     </div>
                     <div className={styles.cardDisplays}>
-                        {animals.map(animal => (
-                            <AnimalCard key={animal._id} animal={animal} />
-                        ))}
+                        {animals
+                                .filter(animal => animal.owner === fullName)
+                                .map(animal => (
+                                    <AnimalCard key={animal._id} animal={animal} />
+                                ))}
                     </div>
                 </div>
             )}
