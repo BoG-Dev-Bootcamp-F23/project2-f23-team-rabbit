@@ -39,6 +39,7 @@
   }
 
   .trainingCardInfo {
+    margin-top: 7px;
     width: 700px;
     overflow: scroll;
     margin-left: 20px;
