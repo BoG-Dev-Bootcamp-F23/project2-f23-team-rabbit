@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AuthContext } from "@/contexts/useAuth";
+import "@/styles/globals.css"; //keep since it get rids of the margin surrounding the whole screen
 
 export default function App({ Component, props }) {
   const [userID, setUserID] = useState("");
