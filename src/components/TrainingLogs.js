@@ -45,9 +45,11 @@ export default function TrainingLogs(props) {
                             Create new
                         </div>
                     </div>
+                    <div className={styles.cardContainer}>
                     {logs.map((log) => (
                         <TrainingLogCard {...log} key={JSON.stringify(log)} />
                     ))}
+                    </div>
                 </>
             )}
         </div>

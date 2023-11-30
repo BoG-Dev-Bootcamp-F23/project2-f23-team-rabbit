@@ -9,6 +9,10 @@
   margin-bottom: 10px; /* Center the header within the available width */
 }
 
+.cardContainer {
+  border-top: 1px solid #b5b1b1;
+}
+ 
 .header h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
