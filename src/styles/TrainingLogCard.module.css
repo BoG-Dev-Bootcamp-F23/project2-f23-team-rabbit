@@ -1,0 +1,7 @@
+.training-card-container {
+    display: flex;
+    justify-content: space-between;
+    width: 1165px;
+    height: 162px;
+    border: 1px solid #E5E5E5;
+  }
