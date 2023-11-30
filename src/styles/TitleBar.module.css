@@ -1,9 +1,12 @@
 .titleBarContainer {
+    position: fixed;
     display: flex;
     align-items: center;
     padding-bottom: 5px;
     box-shadow: 0px 4px 4px #00000040;
-    height: 80px;
+    height: 70px;
+    width: 100%;
+    background-color: white;
   }
   
   .titleBarLeft {
