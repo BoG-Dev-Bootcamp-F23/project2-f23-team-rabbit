@@ -1,7 +1,7 @@
 /* Sidebar.module.css */
 
 .sidebar {
-    width: 240px;
+    width: 30vw;
     height: 95vh;
     color: #777;
     display: flex;

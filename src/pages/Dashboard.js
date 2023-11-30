@@ -8,6 +8,8 @@ import TrainingLogs from "@/components/TrainingLogs";
 import { Allan } from "next/font/google";
 import { useState } from "react";
 
+import styles from "@/styles/Dashboard.module.css";
+
 export default function Dashboard() {
     const [ currTab, setCurrTab ] = useState("animals");
 
@@ -28,7 +30,7 @@ export default function Dashboard() {
     return (
         <div>
             <TitleBar />
-            <div className="mainBody">
+            <div className= {styles.mainBody}>
                 <Sidebar currTab={currTab} setCurrTab={setCurrTab}/>
                 {displayTab()}
             </div>
