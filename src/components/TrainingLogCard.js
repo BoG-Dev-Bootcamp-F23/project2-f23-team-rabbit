@@ -1,33 +1,44 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import styles from "@/styles/TrainingLogCard.module.css";
-import { Heebo, Oswald } from "next/font/google";
-
-
-const oswald = Oswald({ weight: '500', subsets: ["latin"] });
-const lighterOswald = Oswald({ weight: '400', subsets: ["latin"] });
-
-const lightHeebo = Heebo({ weight: '400', subsets: ["latin"] })
-const midHeebo = Heebo({ weight: '500', subsets: ["latin"] })
-const darkHeebo = Heebo({ weight: '700', subsets: ["latin"] })
 
 export default function TrainingLogCard(props) {
-    // const { date, title, description, hours, owner, breed, dogName } = props; proper way to do it
+    const { date, title, description, hours, user, animal } = props;
 
-    //testing
-    const date = "2023/10/20";
-    const title = "Complete sit lessons";
-    const description = "Lucy finishes the sit lessons very well today. Should give her a treat Lucy finishes the sit lessons very well today. Should give her a treat Lucy finishes the sit lessons very well today. Should give her a treat";
-    const hours = 20;
-    const owner = "Long Lam";
-    const breed = "Golden Retriever"; 
-    const dogName = "Lucy";
+    const [userById, setUser] = useState({});
+    const [animalById, setAnimal] = useState({});
+
+
+    console.log(user);
+    console.log(typeof user);
+    //need to fetch user and animal data from database
+    //user : string id
+    //animal : string id
+    const fetchUser = async () => {
+        const response = await fetch(`/api/user?userId=${user}`, {method: "GET"});
+        const responseJSON = await response.json();
+        setUser(responseJSON);
+    };
+    
+    const fetchAnimal = async () => {
+        const response = await fetch(`/api/animal?animalId=${animal}`, {method: "GET"});
+        const responseJSON = await response.json();
+        setAnimal(responseJSON);
+    };
+
+    useEffect(() => {
+        fetchUser();
+        fetchAnimal();
+    }, []);
+
+
 
     //date = "YYYY/MM/DD"
     let month = date.substring(5, 7);
     const day = date.substring(8, 10);
     const year = date.substring(0, 4);
 
-    switch(month) {
+    switch (month) {
         case "01":
             month = "Jan";
             break;
@@ -64,19 +75,21 @@ export default function TrainingLogCard(props) {
         case "12":
             month = "Dec";
             break;
+        default:
+            console.log("Invalid month");
     }
 
     return (
         <div className={styles.trainingCardContainer}>
             <div className={styles.trainingCardLeft}>
                 <div className={styles.trainingCardDate}>
-                <p className={`${styles.day} ${oswald.className}`}>{day}</p>
-                <p className={`${styles.monthYear} ${lighterOswald.className}`}>{month} - {year}</p>
+                <p className={`${styles.day}`}>{day}</p>
+                <p className={`${styles.monthYear} `}>{month} - {year}</p>
                 </div>
                 <div className={styles.trainingCardInfo}>
-                    <h2 className={darkHeebo.className}><span className={styles.title}>{title}</span> <span className={`${styles.subInfo} ${midHeebo.className}`}>&#x2022; {hours} hours</span></h2>
-                    <p className={`${styles.subInfo} ${midHeebo.className}`} style={{fontSize : "18px"}}>{owner} - {breed} - {dogName}</p>
-                    <p className={`${styles.description} ${lightHeebo.className}`}>{description}</p>
+                    <h2><span className={styles.title}>{title}</span> <span className={`${styles.subInfo}`}>&#x2022; {hours} hours</span></h2>
+                    <p className={`${styles.subInfo}`} style={{fontSize : "18px"}}>{userById.fullName} - {animalById.breed} - {animalById.name}</p>
+                    <p className={`${styles.description}`}>{description}</p>
                 </div>
             </div>
             <div className={styles.trainingCardRight}>

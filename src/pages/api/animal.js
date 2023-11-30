@@ -1,5 +1,6 @@
 import createAnimal from "../../../server/mongoDB/actions/createAnimal";
 import updateAnimalHours from "../../../server/mongoDB/actions/updateAnimalHours";
+import getAnimalById from "../../../server/mongoDB/actions/getAnimalById";
 
 
 export default async function animalHandler(req, res) {
@@ -43,6 +44,16 @@ export default async function animalHandler(req, res) {
             console.log(e);
             return res.status(500).send("Failed to update animal hours!");
         }
+    } else if (req.method === "GET") {
+        try {
+            const { animalId } = req.query;
+            if (!animalId) {
+                return res.status(400).send("Missing fields");
+            }
+            const animal = await getAnimalById(animalId);
+            return res.status(200).send(animal);
+        } catch (e) {
+            return res.status(500).send("Failed to get animal!");
+        }
     }
-
 }
