@@ -4,11 +4,14 @@ import TrainingLogCard from "./TrainingLogCard";
 import TrainingLogsForm from "./TrainingLogsForm";
 import styles from "@/styles/TrainingLogs.module.css";
 import Image from "next/image";
+import { useAuth } from "@/contexts/useAuth";
 
 export default function TrainingLogs(props) {
     const [logs, setLogs] = useState([]);
     const [showForm, setShowForm] = useState(false);
-    const userID = "6568ace0cb27d20eacc2c222"; ///supposed to be props.userID
+    const {userID, fullName} = useAuth();
+    console.log(userID)
+    // const userID = "6568ace0cb27d20eacc2c222"; ///supposed to be props.userID
 
 
   
