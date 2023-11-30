@@ -25,12 +25,11 @@ export default function LoginPage() {
       
       const data = await response.json();
 
-      console.log(data.fullName);
-
       if (response.status === 200) {
         setUserID(data.userID);  // Update this line
         setAdmin(data.admin);
         setFullName(data.fullName);
+        
         router.push('/dashboard');
       } else {
         // If login is unsuccessful, set an error message
