@@ -5,8 +5,6 @@ import styles from "@/styles/Animals.module.css";
 export default function AllAnimals() {
     const [animals, setAnimals] = useState([]);
 
-    const userID  = 'Sneha Pal';
-
     useEffect(() => {
         getAnimalData();
     }, []);
