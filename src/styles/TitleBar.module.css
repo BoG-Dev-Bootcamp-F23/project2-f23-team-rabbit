@@ -1,35 +1,35 @@
 .titleBarContainer {
     display: flex;
-    padding-top: 21px;
-    padding-bottom: 21px;
+    align-items: center;
+    padding-bottom: 5px;
     box-shadow: 0px 4px 4px #00000040;
+    height: 80px;
   }
   
   .titleBarLeft {
     display: flex;
     margin-left: 49px;
     width: 251px;
-    justify-content: space-between;
     align-items: center;
   }
 
   .titleBarLeft > h1 {
-    font-size: 2.9em;
+    font-size: 40px;
+    margin-left: 10px;
   }
   
   .appLogo {
-    width: 83px;
-    height: 50px;
+    width: 80px;
   }
 
   .titleBarRight {
     display: flex;
     align-items: center;
-    margin-left: 207px;
+    margin-left: 150px;
     border: 1.5px solid #00000094;
     border-radius: 10px;
-    width: 713px;
-    height: 60px;
+    width: 50%;
+    height: 40px;
 
   }
 
@@ -39,8 +39,8 @@
 }
 
 .titleBarSearchLogo {
-    width: 29.75px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-color: transparent;
     margin-right: 8px;
     margin-left: 22px;
@@ -49,8 +49,7 @@
   .titleBarSearchBar {
     border-color: transparent;
     color: #00000094;
-    font-size: 25px;
-    width: 645px
+    font-size: 18px;
   }
   
   

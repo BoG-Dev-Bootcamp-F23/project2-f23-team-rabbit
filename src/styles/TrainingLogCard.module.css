@@ -1,12 +1,10 @@
 .trainingCardContainer {
     display: flex;
-    width: 1165px;
     height: 162px;
     border: 1px solid #E5E5E5;
     justify-content: space-between;
     align-items: center;
     border-radius: 20px;
-    margin-left: 120px;
     box-shadow: 0px 4px 4px #00000021;
   }
 

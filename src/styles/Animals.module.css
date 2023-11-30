@@ -4,7 +4,6 @@
   display: flex;
   padding: 20px; 
   justify-content: center;
-  width: 70vw; /* Set the width to 100% */
 }
 
 .header {
