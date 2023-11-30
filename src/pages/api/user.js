@@ -9,12 +9,11 @@ export default async function handler(req, res) {
                 return res.status(400).send("Missing fields");
             }
 
-            if (admin !== "true" && admin !== "false") {
-                return res.status(400).send("Admin must be true or false");
-            }
-            const newAdmin = Boolean(admin);
+            // console.log(admin);
+            // // const newAdmin = Boolean(admin);
+            // console.log(newAdmin);
 
-            await createUser({ fullName, email, password, admin : newAdmin });
+            await createUser({ fullName, email, password, admin });
             return res.status(200).json({ message: "Success" });
         } catch (e) {
             console.log(e);

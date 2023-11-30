@@ -38,37 +38,38 @@ export default function Sidebar(props) {
                     </div>
                 </div>
 
-                {admin && (
-                    <div className={styles.adminContainer}>
-                        <p className={styles.sidebarHeader}>
-                            <b>Admin access</b>
-                        </p>
-                        
-                        <div 
-                            className= {currTab === 'allTraining' ? styles.sidebarTabActive : styles.sidebarTab}
-                            onClick={() => setCurrTab('allTraining')}
-                        >
-                            <Image src={currTab === "allTraining" ? "/images/whiteAllTrainingLogo.png": "/images/allTrainingLogo.png"} width={20} height={20} className={styles.sidebarIcon} />
-                            <p>All training</p>
-                        </div>
+               {console.log("Admin is:", admin)}
+               {admin === true && (
+    <div className={styles.adminContainer}>
+        <p className={styles.sidebarHeader}>
+            <b>Admin access</b>
+        </p>
+        
+        <div 
+            className= {currTab === 'allTraining' ? styles.sidebarTabActive : styles.sidebarTab}
+            onClick={() => setCurrTab('allTraining')}
+        >
+            <Image src={currTab === "allTraining" ? "/images/whiteAllTrainingLogo.png": "/images/allTrainingLogo.png"} width={20} height={20} className={styles.sidebarIcon} />
+            <p>All training</p>
+        </div>
 
-                        <div 
-                            className= {currTab === 'allAnimals' ? styles.sidebarTabActive : styles.sidebarTab}
-                            onClick={() => setCurrTab('allAnimals')}
-                        >
-                            <Image src={currTab === "allAnimals" ? "/images/whiteAllAnimalsLogo.png": "/images/allAnimalsLogo.png"} width={20} height={20} className={styles.sidebarIcon} />
-                            <p>All animals</p>
-                        </div>
+        <div 
+            className= {currTab === 'allAnimals' ? styles.sidebarTabActive : styles.sidebarTab}
+            onClick={() => setCurrTab('allAnimals')}
+        >
+            <Image src={currTab === "allAnimals" ? "/images/whiteAllAnimalsLogo.png": "/images/allAnimalsLogo.png"} width={20} height={20} className={styles.sidebarIcon} />
+            <p>All animals</p>
+        </div>
 
-                        <div 
-                            className= {currTab === 'allUsers' ? styles.sidebarTabActive : styles.sidebarTab}
-                            onClick={() => setCurrTab('allUsers')}
-                        >
-                            <Image src={currTab === "allUsers" ? "/images/whiteAllUsersLogo.png": "/images/allUsersLogo.png"} width={20} height={20} className={styles.sidebarIcon} />
-                            <p>All users</p>
-                        </div>
-                    </div>
-                )}
+        <div 
+            className= {currTab === 'allUsers' ? styles.sidebarTabActive : styles.sidebarTab}
+            onClick={() => setCurrTab('allUsers')}
+        >
+            <Image src={currTab === "allUsers" ? "/images/whiteAllUsersLogo.png": "/images/allUsersLogo.png"} width={20} height={20} className={styles.sidebarIcon} />
+            <p>All users</p>
+        </div>
+    </div>
+)}
                 
             </div>
             <div className={styles.bottom}>
@@ -82,7 +83,7 @@ export default function Sidebar(props) {
                         <div className={styles.userName}>
                             <div>{fullName}</div>
                         </div>
-                        {admin ? (
+                        {(admin === true) ? (
                             <div className={styles.userIdentifier}>Admin</div>
                         ) : (
                             <div>User</div>
