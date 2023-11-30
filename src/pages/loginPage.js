@@ -1,90 +1,85 @@
 // pages/index.js
+
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { Heebo } from 'next/font/google';
+import styles from '@/styles/Login.module.css';
+import { useAuth } from '@/contexts/useAuth';
 
-const LoginPage = () => {
+export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const containerStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    backgroundColor: 'white',
-    color: 'black',
-    fontFamily: 'Heebo',
-    
-  };
+  const { setUserID, setAdmin, setFullName } = useAuth();
 
-  const formStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  };
-  const loginStyle = {
-      marginTop: '-210px'
+  async function handleLogin(email, password, router){
+    try {
+      const response = await fetch('/api/user/verify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email, password: password }),
+      });
       
-  }
+      const data = await response.json();
 
-  const formGroupStyle = {
-    marginBottom: '10px',
-  };
+      console.dir(data);
 
-  const buttonStyle = {
-    marginTop: '10px',
-  };
-  const suStyle = {
-      fontWeight: 'bolder'
-  }
-  const lolStyle = {
-      marginTop: '50px'
-  }
-  const h1Style = {
-      fontSize: "40px",
-      fontFamily: 'Heebo'
-  }
-
-  const handleLogin = async () => {
-    // Perform backend verification using an API endpoint
-    // Example: const response = await fetch('/api/login', { method: 'POST', body: { email, password } });
-    // Check if the login is successful
-    // Example: if (response.status === 200) { router.push('/dashboard'); }
-    // If unsuccessful, set an error message
-    // Example: setError('Invalid email or password');
+      if (response.status === 200) {
+        setUserID(data.userID);  // Update this line
+        setAdmin(data.admin);
+        setFullName(data.fullName);
+        router.push('/Dashboard');
+      } else {
+        // If login is unsuccessful, set an error message
+        setError('Invalid email or password');
+      }
+      
+    } catch (error) {
+      console.error('Error during login:', error);
+      setError('User does not exist!');
+    }
   };
 
   return (
-    <div style={containerStyle}>
-        <div style={loginStyle}>
-      <h1 style={h1Style}>Login</h1>
+    <div className={styles.container}>
+      <div>
+        <h1 className={styles.h1}>Login</h1>
       </div>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form style={formStyle}>
-          <div style={lolStyle}>
-        <div style={formGroupStyle}>
-          <label>Email:</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      {error && <p className={styles.error}>{error}</p>}
+      <form className={styles.form}>
+        <div className={styles.formGroup}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={styles.inputField}
+          />
         </div>
-        <div style={formGroupStyle}>
-          <label>Password:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <div className={styles.formGroup}>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={styles.inputField}
+          />
         </div>
-        <button type="button" onClick={handleLogin} style={buttonStyle}>
+        <button
+          type="button"
+          onClick={() => handleLogin(email, password, router)}
+          className={styles.button}
+        >
           Login
         </button>
-        </div>
+
       </form>
       <p>
-        Don't have an account? <a style={suStyle} href="/create-account">Sign Up</a>
+        Don't have an account? <a className={styles.signUp} href="/create-account">Sign Up</a>
       </p>
-      
     </div>
   );
 };
-
-export default LoginPage;
 

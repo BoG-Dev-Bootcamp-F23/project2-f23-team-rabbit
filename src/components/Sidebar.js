@@ -55,7 +55,7 @@ export default function Sidebar(props) {
                             onClick={() => setCurrTab('allUsers')}
                         >
                             <Image src="/images/allUsersLogo.png" width={20} height={20} className={styles.sidebarIcon} />
-                            <p>All animals</p>
+                            <p>All users</p>
                         </div>
                     </div>
                 )}

@@ -11,7 +11,7 @@ import { useState } from "react";
 import styles from "@/styles/Dashboard.module.css";
 
 export default function Dashboard() {
-    const [ currTab, setCurrTab ] = useState("animals");
+    const [ currTab, setCurrTab ] = useState("training");
 
     function displayTab() {
         if (currTab === "training") {

@@ -1,0 +1,52 @@
+/* UserCard.module.css */
+
+.user {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 15px 30px;
+    display: flex;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .userInfo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .userLogo {
+    width: 40px;
+    height: 40px;
+    background-color: #D21312;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .firstLetter {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .text {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .fullName {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .adminLabel {
+    font-size: 0.8rem;
+    color: #555;
+  }
+  
+  /* Add more styles as needed for your UserCard component */
+  
