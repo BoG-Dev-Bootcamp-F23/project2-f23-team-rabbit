@@ -8,8 +8,6 @@ import TrainingLogs from "@/components/TrainingLogs";
 import styles from "@/styles/Dashboard.module.css";
 import { useState } from "react";
 
-import styles from "@/styles/Dashboard.module.css";
-
 export default function Dashboard() {
     
     const [ currTab, setCurrTab ] = useState("training");
