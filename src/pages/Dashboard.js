@@ -8,7 +8,7 @@ import TrainingLogs from "@/components/TrainingLogs";
 import styles from "@/styles/Dashboard.module.css";
 import { useState } from "react";
 
-export default function Dashboard() {
+export default function dashboard() {
     
     const [ currTab, setCurrTab ] = useState("training");
     
