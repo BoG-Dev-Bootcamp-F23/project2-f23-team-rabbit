@@ -2,11 +2,20 @@ import React from 'react';
 import Image from 'next/image';
 import styles from '@/styles/Sidebar.module.css';
 import { useAuth } from '@/contexts/useAuth';
+import router from 'next/router';
 
 export default function Sidebar(props) {
     const {currTab, setCurrTab} = props
-    const { fullName, admin} = useAuth();
+    const { fullName, admin, setAdmin} = useAuth();
     console.log(admin);
+
+    const handleLogout = () => {
+        // clearAuth();
+        if (admin) {
+            setAdmin(false);
+        }
+        router.push('/loginPage');
+    };
 
     return (
         <div className = {styles.sidebar}>
@@ -73,9 +82,17 @@ export default function Sidebar(props) {
                         <div className={styles.userName}>
                             <div>{fullName}</div>
                         </div>
-                        {admin ? <div className={styles.userIdentifier}>Admin</div> : <div>User</div>}
+                        {admin ? (
+                            <div className={styles.userIdentifier}>Admin</div>
+                        ) : (
+                            <div>User</div>
+                        )}
                     </div>
                 </div>
+
+                <button className={styles.logoutButton} onClick={handleLogout}>
+                    Logout
+                </button>
             </div>
         </div> 
     )
