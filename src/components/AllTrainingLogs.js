@@ -29,7 +29,7 @@ export default function AllTrainingLogs() {
                     </div>
                     <div className={styles.cardDisplays}>
                         {trainingLogs.map(log => (
-                            <TrainingLogCard {...log} key={JSON.stringify(log)} />
+                            <TrainingLogCard {...log}  all={true} key={JSON.stringify(log)} />
                         ))}
                     </div>
                 </div>
