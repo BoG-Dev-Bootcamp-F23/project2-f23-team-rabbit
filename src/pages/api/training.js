@@ -1,6 +1,7 @@
 import createTrainingLog from "../../../server/mongoDB/actions/createTrainingLog";
 import mongoose from "mongoose";
 import updateAnimalHours from "../../../server/mongoDB/actions/updateAnimalHours";
+import getUserTrainingLogs from "../../../server/mongoDB/actions/getUserTrainingLogs";
 
 export default async function handler(req, res) {
     if (req.method === "POST") {
@@ -32,6 +33,18 @@ export default async function handler(req, res) {
         } catch (e) {
             console.log(e);
             return res.status(500).send("Failed to create Training Log!");
+        }
+    } else if (req.method === "GET") {
+        try {
+            const { user } = req.query;
+            if (!user) {
+                return res.status(400).send("Missing fields");
+            }
+            const newUser = new mongoose.Types.ObjectId(user);
+            const logs = await getUserTrainingLogs(newUser);
+            return res.status(200).send(logs);
+        } catch (e) {
+            return res.status(500).send("Failed to get Training Logs!");
         }
     }
 }
