@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import TrainingLogCard from "./TrainingLogCard";
 import TrainingLogsForm from "./TrainingLogsForm";
 import styles from "@/styles/TrainingLogs.module.css";
+import Image from "next/image";
 
 export default function TrainingLogs(props) {
     const [logs, setLogs] = useState([]);
@@ -39,12 +40,10 @@ export default function TrainingLogs(props) {
                 <>
                     <div className={styles.header}>
                         <h1>Training Logs</h1>
-                        <button 
-                            className={styles.createLogButton} 
-                            onClick={() => setShowForm(true)}
-                        >
-                            + Create Log
-                        </button>
+                        <div className={styles.createLogButton} onClick={() => setShowForm(true)}>
+                            <Image src="/images/add.png" width={20} height={20} className={styles.add}/>
+                            Create new
+                        </div>
                     </div>
                     {logs.map((log) => (
                         <TrainingLogCard {...log} key={JSON.stringify(log)} />

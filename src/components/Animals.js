@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import AnimalCard from './AnimalCard';
 import AnimalForm from './AnimalForm';
 import styles from "@/styles/Animals.module.css";
+import Image from "next/image";
 
 export default function Animals() {
     const [animals, setAnimals] = useState([]);
@@ -38,7 +39,10 @@ export default function Animals() {
                 <div>
                     <div className={styles.header}>
                         <h1>Animals</h1>
-                        <button className= {styles.createAnimalButton} onClick={() => setShowForm(!showForm)}>+ Create Animal</button>
+                        <div className={styles.createAnimalButton} onClick={() => setShowForm(!showForm)}>
+                            <Image src="/images/add.png" width={20} height={20} className={styles.add}/>
+                            Create new
+                        </div>
                     </div>
                     <div className={styles.cardDisplays}>
                         {animals.map(animal => (

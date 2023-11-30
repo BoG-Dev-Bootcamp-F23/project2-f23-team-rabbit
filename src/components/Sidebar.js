@@ -90,9 +90,9 @@ export default function Sidebar(props) {
                     </div>
                 </div>
 
-                <button className={styles.logoutButton} onClick={handleLogout}>
-                    Logout
-                </button>
+                <div className={styles.logoutButton} onClick={handleLogout}>
+                    <Image src="/images/logout.png" width={20} height={20} />
+                </div>
             </div>
         </div> 
     )

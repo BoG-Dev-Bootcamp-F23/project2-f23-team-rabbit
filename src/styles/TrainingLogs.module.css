@@ -18,17 +18,15 @@
 }
 
 .createLogButton {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.8vw;
-  padding: 5px 10px;
-  background: #D21312;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Add transition for smoother hover effect */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    color: grey;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
-.createLogButton:hover {
-  background-color: #45a049; /* Darker green color on hover */
+.add {
+    margin-right: 10px;
 }
