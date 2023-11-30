@@ -4,7 +4,7 @@ import AllUsers from "@/components/AllUsers";
 import Animals from "@/components/Animals";
 import Sidebar from "@/components/Sidebar";
 import TrainingLogs from "@/components/TrainingLogs";
-import { Allan } from "next/font/google";
+import styles from "@/styles/Dashboard.module.css";
 import { useState } from "react";
 
 export default function Dashboard() {
@@ -25,7 +25,7 @@ export default function Dashboard() {
     }
 
     return (
-        <div>
+        <div className={styles.dashboardContainer}>
             <Sidebar currTab={currTab} setCurrTab={setCurrTab}/>
             {displayTab()}
         </div>
