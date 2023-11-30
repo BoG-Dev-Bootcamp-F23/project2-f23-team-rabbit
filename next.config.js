@@ -4,7 +4,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['hips.hearstapps.com'],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
   },
 };
 
