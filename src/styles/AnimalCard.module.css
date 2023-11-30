@@ -11,8 +11,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20vw;
-    height: 33vh;
+    width: 23vw;
+    padding-bottom: 15px;
 }
 
 .animal:hover {
