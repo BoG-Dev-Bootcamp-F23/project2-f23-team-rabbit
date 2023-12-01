@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from '@/styles/CreateAccount.module.css';
 import { useAuth } from '@/contexts/useAuth';
+import Image from 'next/image';
 import TitleBar from '@/components/TitleBar';
 
 const CreateAccountPage = () => {
@@ -25,6 +26,7 @@ const CreateAccountPage = () => {
 
     // Perform user creation using backend code (replace with your actual API endpoint)
     try {
+      console.log(admin ? "admin": "user");
       const response = await fetch('/api/user', {
         method: 'POST',
         headers: {
@@ -50,7 +52,7 @@ const CreateAccountPage = () => {
 
   return (
     <>
-    <TitleBar loggedIn={false}/>
+    <TitleBar loggedIn={false} />
     <div className={styles.container}>
       <div>
         <h1 className={styles.h1}>Create Account</h1>
@@ -115,6 +117,7 @@ const CreateAccountPage = () => {
         Already have an account?{' '}
         <a className={styles.logIn} href="/loginPage">Sign In</a>
       </p>
+      <Image src="/images/quarterCircle.png" width={200} height={200} alt={"Quarter circle"} className={styles.circle} />
     </div>
     </>
   );
