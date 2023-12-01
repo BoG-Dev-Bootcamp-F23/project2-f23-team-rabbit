@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import styles from '@/styles/Login.module.css';
 import { useAuth } from '@/contexts/useAuth';
 import TitleBar from '@/components/TitleBar';
+import Image from 'next/image';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -76,11 +77,11 @@ export default function LoginPage() {
         >
           Login
         </button>
-
       </form>
       <p>
         Don't have an account? <a className={styles.signUp} href="/create-account">Sign Up</a>
       </p>
+      <Image src="/images/quarterCircle.png" width={200} height={200} alt={"Quarter circle"} className={styles.circle} />
     </div>
     </>
   );
