@@ -23,7 +23,7 @@ export default function AllTrainingLogs() {
 
     return (
         <div className={styles.display}>
-            <div>
+            <div style={{width : "100%"}}>
                     <div className={styles.header}>
                         <h1>All Training Logs</h1>
                     </div>

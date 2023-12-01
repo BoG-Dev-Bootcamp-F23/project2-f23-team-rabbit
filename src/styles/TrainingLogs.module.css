@@ -34,3 +34,8 @@
 .add {
     margin-right: 10px;
 }
+
+.cardDisplays {
+  width: 100%;
+  border-top: 1px solid #b5b1b1;
+}

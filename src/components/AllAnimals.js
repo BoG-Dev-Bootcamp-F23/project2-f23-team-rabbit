@@ -23,14 +23,16 @@ export default function AllAnimals() {
 
     return (
         <div className={styles.display}>
-            <div>
+            <div style={{width: "100%"}}>
                     <div className={styles.header}>
                         <h1>All Animals</h1>
                     </div>
-                    <div className={styles.cardDisplays}>
-                        {animals.map(animal => (
-                            <AnimalCard key={animal._id} animal={animal} />
-                        ))}
+                    <div style={{width: "100%"}}>
+                        <div className={styles.cardDisplays}>
+                            {animals.map(animal => (
+                                <AnimalCard key={animal._id} animal={animal} />
+                            ))}
+                        </div>
                     </div>
                 </div>
         </div>

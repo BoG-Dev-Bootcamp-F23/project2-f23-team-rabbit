@@ -28,11 +28,13 @@ export default function AllUsers() {
         <div className={styles.header}>
           <h1>All Users</h1>
         </div>
+        <div style={{width: "100%"}}>
         <div className={styles.cardDisplays}>
           {/* Display users data using UserCard */}
           {users.map(user => (
             <UserCard key={user._id} user={user} />
           ))}
+        </div>
         </div>
       </div>
     </div>

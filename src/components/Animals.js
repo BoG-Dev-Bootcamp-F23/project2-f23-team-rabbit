@@ -37,7 +37,7 @@ export default function Animals() {
                     <AnimalForm className={styles.border} owner={fullName} onCancel={() => setShowForm(false)} onSubmitSuccess={handleFormSubmitSuccess} />
                 </div>
             ) : (
-                <div>
+                <div style={{width : "100%"}}>
                     <div className={styles.header}>
                         <h1>Animals</h1>
                         <div className={styles.createAnimalButton} onClick={() => setShowForm(!showForm)}>
