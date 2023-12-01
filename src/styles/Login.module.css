@@ -95,8 +95,15 @@
     font-size: 40px;
     margin-left: 10px;
   }
+
   .appLogo {
     width: 80px;
+  }
+
+  .circle {
+    position: absolute;
+    left: 0;
+    bottom: 0;
   }
   
   
