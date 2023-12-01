@@ -39,7 +39,7 @@ export default function Sidebar(props) {
                 </div>
 
                {console.log("Admin is:", admin)}
-               {admin && (
+               {admin === true && (
     <div className={styles.adminContainer}>
         <p className={styles.sidebarHeader}>
             <b>Admin access</b>
