@@ -70,4 +70,10 @@
   .logIn:hover {
     text-decoration: underline; /* Underline on hover */
   }
+
+  .circle {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
   
